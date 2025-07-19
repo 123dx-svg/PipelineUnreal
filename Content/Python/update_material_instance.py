@@ -3,7 +3,6 @@ import unreal
 EditorAssetLibrary = unreal.EditorAssetLibrary()
 MaterialEditingLibrary = unreal.MaterialEditingLibrary()
 
-
 def set_material_vector(material_instace:unreal.MaterialInstanceConstant,parameter_name:unreal.Name,value)->bool:
     #异常处理
     assert parameter_name in MaterialEditingLibrary.get_vector_parameter_names(material_instace)
