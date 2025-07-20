@@ -11,8 +11,6 @@ mesh_type_to_directory_mapping = {
     "environment": "Enviro",
     "weapons": "Weapons",
     "decal" : "Decal"
-
-
 }
 
 
