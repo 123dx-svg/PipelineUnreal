@@ -9,10 +9,6 @@ source_paths = r"D:\\CPPUE4\\PipelineUnreal\\FBX"
 #assert_to_import = list(Path(source_paths).rglob("*.fbx")) 递归搜索
 assert_to_import = list(Path(source_paths).glob("*.fbx"))
 
-# 确保目标路径存在 ===> 关键修复点 <===
-if not unreal.EditorAssetLibrary.does_directory_exist(destination_path):
-    unreal.EditorAssetLibrary.make_directory(destination_path)
-
 # 合并导入的网格
 static_mesh_import_data = unreal.FbxStaticMeshImportData()
 static_mesh_import_data.combine_meshes = True
