@@ -1,6 +1,12 @@
 import unreal
 
 
+@unreal.uclass()
+class MyScriptObject(unreal.ToolMenuEntryScript):
+     @unreal.ufunction(override = True)
+     def execute(self, context):
+          print("Script Excuted")
+
 def add_title_bar_button():
      menus = unreal.ToolMenus.get()
      #添加到顶部
@@ -9,12 +15,6 @@ def add_title_bar_button():
      custom_menu = main_menu.add_sub_menu("Custom Menu","PyAutomation","Menu Name","Menu Label")
      #刷新菜单
      menus.refresh_all_widgets()
-
-@unreal.uclass()
-class MyScriptObject(unreal.ToolMenuEntryScript):
-     @unreal.ufunction(override = True)
-     def execute(self, context):
-          print("Script Excuted")
 
 
 #按钮添加到EditMain下
@@ -33,6 +33,10 @@ def add_button_to_EditMain():
     )
     #添加到section中去
     script_obj.register_menu_entry()
+
+    menus.refresh_all_widgets()
+
+
 
 #按钮添加到右键静态网格体下
 def add_button_to_staticmesh():
@@ -55,3 +59,7 @@ def add_button_to_staticmesh():
                                           style_name="Palette.Icon",
                                           small_style_name="Palette.Icon.Small")
      tool_menu_entry_script_data.icon = script_icon
+
+
+     #属性UI 如果初始化执行可能不需要刷新
+     menus.refresh_all_widgets()

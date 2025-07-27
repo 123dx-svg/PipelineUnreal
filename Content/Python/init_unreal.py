@@ -15,4 +15,4 @@ add_title_bar_button()
  #在EditMain中再添加一个可以执行脚本的按钮
 add_button_to_EditMain()
  #在静态网格体下添加按钮
-add_button_to_staticmesh()
+#add_button_to_staticmesh()
