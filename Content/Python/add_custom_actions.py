@@ -16,7 +16,7 @@ class MyScriptObject(unreal.ToolMenuEntryScript):
      def execute(self, context):
           print("Script Excuted")
 
-          
+
 #按钮添加到EditMain下
 def add_button_to_EditMain():
     menus = unreal.ToolMenus.get()
@@ -38,8 +38,8 @@ def add_button_to_EditMain():
 def add_button_to_staticmesh():
      menus = unreal.ToolMenus.get()
      asset_context_menu = menus.find_menu("ContentBrowser.AssetContextMenu.StaticMesh")
-     script_obj2 = MyScriptObject()
-     script_obj2.init_entry(
+     script_obj = MyScriptObject()
+     script_obj.init_entry(
         owner_name=asset_context_menu.menu_name,
         menu=asset_context_menu.menu_name,
         section="GetAssetActions",
@@ -47,4 +47,11 @@ def add_button_to_staticmesh():
         label="UE5 PyAutomation2",
         tool_tip="Custom Script Entry2"
      )
-     script_obj2.register_menu_entry()
+     script_obj.register_menu_entry()
+
+    #添加图标 具体Style直接到UMGStyle.cpp文件下找，如果需要自定义图标就得CPP改了 此处用了个调色盘图标
+     tool_menu_entry_script_data = script_obj.data
+     script_icon = unreal.ScriptSlateIcon(style_set_name="UMGStyle",
+                                          style_name="Palette.Icon",
+                                          small_style_name="Palette.Icon.Small")
+     tool_menu_entry_script_data.icon = script_icon
