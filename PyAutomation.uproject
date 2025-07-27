@@ -21,6 +21,10 @@
 		{
 			"Name": "PythonFoundationPackages",
 			"Enabled": true
+		},
+		{
+			"Name": "ImporterRulesPython",
+			"Enabled": true
 		}
 	]
 }
