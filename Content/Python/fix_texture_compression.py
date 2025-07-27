@@ -41,4 +41,5 @@ def validate_compression_settings(directory:str,apply_fix:bool =True):
                 texture.set_editor_property(name="compression_settings",value = correct_compression)
 
 if __name__ == "__main__":
-    validate_compression_settings(directory="/Game/StarterContent/Textures/")
+    with unreal.ScopedEditorTransaction("Fix Texture Compression"):
+        validate_compression_settings(directory="/Game/StarterContent/Textures/")
