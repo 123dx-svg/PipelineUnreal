@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../../Plugins/UnrealImporterRules-Python-main/Content/Python"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Plugins/FixTextureCompression/Content/Python"
+		}
+	],
+	"settings": {}
+}
